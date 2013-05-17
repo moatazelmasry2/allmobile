@@ -1,0 +1,55 @@
+Q.InsertPkw=insert into pkw_offers(offer_uid, category_id, brand_id, model_id, oiltypes_id, \
+    manufacture_year, geartype_id, color_id, country_id, city_id, \
+    status, offer_status, num_km, price, automatic_windshield, \
+    central_locks, leather_seats, airconditioner, navigator, power_steering, \
+    num_doors, num_seats, abs, fourx4, alarm, \
+    xenon, airbags, created, last_visited, hits, description) \
+    values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURDATE(), CURDATE(), 0, ?);
+Q.InsertImages=insert into images(name, imgType, image, offer_uid) values (?, ?, ?, ?);
+
+Q.GetPKW=select o.id, o.offer_uid, cats.{0} as category, brands.{0} as brand, \
+models.name as model, oils.{0} as oilType, o.manufacture_year, gears.{0} as gearType, \
+colors.{0} as color, countries.{0} as country, stats.{0} as status, ofstats.name as offer_status, \
+o.num_km, o.price, o.automatic_windshield, o.central_locks, o.leather_seats, o.airconditioner, \
+o.navigator, o.power_steering, o.num_doors, o.num_seats, o.abs, o.fourx4, o.alarm, o.xenon, o.airbags, \
+o.created, o.last_visited, o.hits, o.description from pkw_offers as o \
+left join pkw_categories cats on o.category_id=cats.id left join pkw_brands brands on o.brand_id=brands.id \
+left join pkw_models models on o.model_id=models.id left join oil_types oils on o.oiltypes_id=oils.id \
+left join gear_type gears on o.geartype_id=gears.id left join colors colors on o.color_id=colors.id \
+left join countries countries on o.country_id=countries.id left join status stats on o.status=stats.id \
+left join _offer_status ofstats on o.offer_status=ofstats.id where o.{1}=?;
+
+Q.SearchPKW=select o.id, o.offer_uid, cats.{0} as category, brands.{0} as brand, \
+models.name as model, o.manufacture_year, countries.{0} as country, stats.{0} as status, o.num_km, o.price \
+from pkw_offers as o \
+left join pkw_categories cats on o.category_id=cats.id left join pkw_brands brands on o.brand_id=brands.id \
+left join pkw_models models on o.model_id=models.id \
+left join countries countries on o.country_id=countries.id left join status stats on o.status=stats.id \
+left join _offer_status ofstats on o.offer_status=ofstats.id {1} ORDER BY o.created {2};
+Q.SearchPKWCount=select count(*) from pkw_offers as o {0};
+
+
+
+
+Q.GetCategories=select id, {0} from pkw_categories
+#Q.GetCategories2=select o.id, o.{0} as name from pkw_categories as o;
+Q.GetCategories2=select * from pkw_categories;
+Q.GetColors=select id, {0} from colors;
+Q.GetCountries=select id, {0} from countries;
+Q.GetGearTypes=select id, {0} from gear_type;
+Q.GetOilTypes=select id, {0} from oil_types;
+Q.GetPKWBrands=select id,{0} from pkw_brands;
+Q.GetPKWByUID=select * from pkw_offers where uid=?;
+Q.GetPKWByID=select * from pkw_offers where id=?;
+Q.GetPKWModel=select id,name from pkw_models where brandID='?';
+Q.GetPKWOfferByID=select * from pkw_offers where id=?;
+Q.GetPKWOfferByUID=select * from pkw_offers where offer_uid=?;
+Q.GetStatus=select id, {0} from status;
+
+Q.GetImageByName=select id, image,offer_uid from images where name='?';
+Q.GetImages=select id, name, imgType, image, offer_uid from images where offer_uid=?;
+
+
+
+Q.ModelsInsert=INSERT into pkw_models (name,brandID) SELECT ''{0}'', pkw_brands.id FROM pkw_brands WHERE pkw_brands.en=''{1}'';

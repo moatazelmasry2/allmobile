@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+#buyContent div {
+	text-align: right;
+}
+

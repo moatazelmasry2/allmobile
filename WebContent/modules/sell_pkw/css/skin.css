@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+#panel2_c.yui-panel-container.shadow .underlay {
+    position:absolute;
+    background-color:#000;
+    opacity:0.12;
+    filter:alpha(opacity=12);
+    left:3px;
+    right:-3px;
+    bottom:-3px;
+    top:3px;
+}
+#panel2.yui-panel {
+    border:none;
+    overflow:visible;
+    background-color:transparent;
+}
+
+/* Apply styles to the close icon to anchor it to the left side of the header */
+#panel2.yui-panel .container-close {
+    position:absolute;
+    top:3px;
+    left:4px;
+    height:18px;
+    width:17px;
+    background:url(img/aqua-hd-close.gif) no-repeat;
+    z-index:1;
+}
+/* span:hover not supported on IE6 */
+#panel2.yui-panel .container-close:hover {
+    background:url(img/aqua-hd-close-over.gif) no-repeat;
+}
+
+/* Style the header and apply the rounded corners, center the text */
+#panel2.yui-panel .hd {
+    padding:0;
+    border:none;
+    background:url(img/aqua-hd-bg.gif) repeat-x;
+    color:#000;
+    height:22px;
+    margin-left:7px;
+    margin-right:7px;
+    text-align:center;
+    overflow:visible;
+}
+/* Style the body and footer */
+#panel2.yui-panel .bd {
+    overflow:hidden;
+    padding:4px;
+    border:1px solid #aeaeae;
+    background-color:#FFF;
+}
+#panel2.yui-panel .ft {
+    font-size:75%;
+    color:#666;
+    padding:2px;
+    overflow:hidden;
+    border:1px solid #aeaeae;
+    border-top:none;
+    background-color:#dfdfdf;
+}
+
+/* Skin custom elements */
+#panel2.yui-panel .hd span {
+    vertical-align:middle;
+    line-height:22px;
+    font-weight:bold;
+}
+#panel2.yui-panel .hd .tl {
+    width:7px;
+    height:22px;
+    top:0;
+    left:0;
+    background:url(img/aqua-hd-lt.gif) no-repeat;
+    position:absolute;
+}
+#panel2.yui-panel .hd .tr {
+    width:7px;
+    height:22px;
+    top:0;
+    right:0;
+    background:url(img/aqua-hd-rt.gif) no-repeat;
+    position:absolute;
+}

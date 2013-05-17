@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.9.0/build/yahoo-dom-event/yahoo-dom-event.js&2.9.0/build/connection/connection-min.js"></script>
+
+
+
+<script type="text/javascript">
+function writeFileList(o) {
+    var div = document.getElementById('upload-list');
+    div.innerHTML = o.responseText;
+}
+
+var uploadHandler = {
+    upload: writeFileList,
+    failure: handleError,
+    argument: null
+};
+
+function uploadFile() {
+    var form = document.getElementById('uploadForm');
+    if(form.target.value == "") {
+        alert('Please select a file');
+        return;
+    }
+
+    YAHOO.util.Connect.setForm(form,true);
+    var request =
+        YAHOO.util.Connect.asyncRequest('POST','/autos/servlet?request=upload',uploadHandler,null);
+}
+function handleError() {
+    alert(e);	
+}
+</script>
+</head>
+<body>
+<form name="attachmentForm" id="uploadForm"
+    enctype="multipart/form-data">
+    <div>
+        <input type="file" name="target" size="80" />&nbsp;&nbsp;
+    </div>
+    <div>
+        <input type="file" name="target" size="80" />&nbsp;&nbsp;
+        <input type="button" value="Upload" onclick="uploadFile()"/>
+    </div>
+</form>
+<div id="upload-list"></div>
+</body>
+</html>

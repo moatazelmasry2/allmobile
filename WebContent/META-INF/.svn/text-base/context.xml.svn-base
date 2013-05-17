@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context
+        debug="5" reloadable="true" crossContext="true">
+  <Resource name="jdbc/autos"
+            auth="Container"
+            type="javax.sql.DataSource"
+            username="autos"
+            password="hXWNFzxExXZ3j8BE"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/autos"
+            maxActive="50"
+            maxIdle="10" maxWait="10000"/>
+</Context>

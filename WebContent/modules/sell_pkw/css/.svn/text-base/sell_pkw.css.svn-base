@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+html {
+    /*background: #E2E1DF;*/
+}
+
+.mitem div div fieldset div div ul li a, .mitem div div fieldset div div ul li a, .yui-menu-button span button {
+    min-width: 13em;
+    min-height: 2em;
+}
+
+.mentry {
+    width: 17em;
+    height: 3em;
+    margin-top: 1.5em;
+    /*margin-left: 1.5em;*/
+}
+
+.mentry fieldset span, .mentry fieldset span span button,.mentry input, .mentry fieldset div div ul li {
+    width: 14em;
+    height: 2sem;
+}
+    
+#content {
+    /*border: black thin solid;*/
+}
+
+#basic, #extended, #misc  {
+    border: medium black ridge;
+    padding-bottom: 1em;
+}
+
+#extended {
+    min-height: 520px;
+}
+
+.mentry span {
+    width : 14em;
+}
+#leather_seats button, #power_steering button, #alarm button,
+#central_locks button, #navigator button, #airbags button, #fourx4 button,
+#windshield button, #conditioner button, #abs button, #xenon button
+     {
+    padding-left: 3em;
+    background: url(img/uncheck.png) 10% 50% no-repeat;
+
+}

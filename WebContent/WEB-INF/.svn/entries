@@ -1,0 +1,71 @@
+10
+
+dir
+32
+https://allmobil.googlecode.com/svn/trunk/%20allmobil/autos2/WebContent/WEB-INF
+https://allmobil.googlecode.com/svn
+
+
+
+2011-06-27T22:51:35.435543Z
+28
+zaza1851983ml
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e43e9bad-82b8-3743-3ee6-a7b1aa1b19da
+
+classes
+dir
+
+lib
+dir
+
+resources
+dir
+
+web.xml
+file
+
+
+
+
+2011-07-21T16:36:03.000000Z
+5aca2c3652c9370da3fa712a70fb6ed3
+2011-06-27T22:51:35.435543Z
+28
+zaza1851983ml
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1870
+
