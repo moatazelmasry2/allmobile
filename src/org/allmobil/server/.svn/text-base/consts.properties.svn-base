@@ -1,6 +1,0 @@
-JSP.Sell_PKW=/autos/modules/sell_pkw/index.jsp
-JSP.Main=/autos/index.jsp
-JSP.UnderConstruction=/autos/modules/construction/index.jsp
-JSP.PKW_OFFER=/autos/modules/pkw_offer/index.jsp
-DIR.IMGS=/autos/img/
-SERVER.IMGS=/img/

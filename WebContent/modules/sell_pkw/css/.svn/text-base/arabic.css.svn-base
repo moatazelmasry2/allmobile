@@ -1,5 +1,0 @@
-@CHARSET "UTF-8";
-
-#uploadDialog #uploadDialog_h, #desc fieldset legend {
-    text-align: left;
-}

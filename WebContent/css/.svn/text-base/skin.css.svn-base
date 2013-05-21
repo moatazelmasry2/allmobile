@@ -1,9 +1,0 @@
-@CHARSET "UTF-8";
-
-html {
-	background-color: #EDF5FF;	
-}
-
-.yui-skin-sam {
-	background-color: #EDF5FF;	
-}
